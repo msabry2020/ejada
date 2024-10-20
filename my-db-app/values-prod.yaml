@@ -1,3 +1,6 @@
 replicaCount: 2
 persistence:
   size: 10Gi  # Adjust size as needed
+env:
+  - name: MYSQL_ROOT_PASSWORD
+    value: "password"
