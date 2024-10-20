@@ -1,0 +1,16 @@
+replicaCount: 2
+
+image:
+  repository: mysql
+  tag: "8.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3306
+
+persistence:
+  enabled: true
+  storageClass: "standard"
+  accessMode: ReadWriteMany
+  size: 10Gi
