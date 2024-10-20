@@ -1,12 +1,10 @@
-replicaCount: 2
-
 image:
-  repository: mysql
-  tag: "8.0"
+  repository: mariadb 
+  tag: 10.5
   pullPolicy: IfNotPresent
 
 service:
-  type: ClusterIP
+  type: NodePort 
   port: 3306
 
 persistence:
@@ -14,3 +12,6 @@ persistence:
   storageClass: "standard"
   accessMode: ReadWriteMany
   size: 10Gi
+
+mysql:
+  rootPassword: "password"

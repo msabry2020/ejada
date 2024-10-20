@@ -15,6 +15,9 @@ spec:
       containers:
       - name: {{ .Release.Name }}-db
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        env:
+          - name: MARIADB_ROOT_PASSWORD 
+            value: {{ .Values.mysql.rootPassword }}
         ports:
         - containerPort: 3306
         volumeMounts:
